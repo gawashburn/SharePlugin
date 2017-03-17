@@ -6,9 +6,19 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2C0DB2BB1E7B641100FD3AD5 /* MartaApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0DB2B91E7B641100FD3AD5 /* MartaApi.framework */; };
+		2C0DB2BC1E7B641100FD3AD5 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0DB2BA1E7B641100FD3AD5 /* SwiftyJSON.framework */; };
+		2C0DB2BE1E7B642400FD3AD5 /* plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0DB2BD1E7B642400FD3AD5 /* plugin.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		2C0DB2AE1E7B63E200FD3AD5 /* SharePlugin.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharePlugin.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C0DB2B11E7B63E200FD3AD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C0DB2B71E7B640A00FD3AD5 /* Frameworks */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Frameworks; sourceTree = "<group>"; };
+		2C0DB2B91E7B641100FD3AD5 /* MartaApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MartaApi.framework; path = Frameworks/MartaApi.framework; sourceTree = "<group>"; };
+		2C0DB2BA1E7B641100FD3AD5 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Frameworks/SwiftyJSON.framework; sourceTree = "<group>"; };
+		2C0DB2BD1E7B642400FD3AD5 /* plugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = plugin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -16,6 +26,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C0DB2BB1E7B641100FD3AD5 /* MartaApi.framework in Frameworks */,
+				2C0DB2BC1E7B641100FD3AD5 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -25,8 +37,11 @@
 		2C0DB2A51E7B63E200FD3AD5 = {
 			isa = PBXGroup;
 			children = (
+				2C0DB2B91E7B641100FD3AD5 /* MartaApi.framework */,
+				2C0DB2BA1E7B641100FD3AD5 /* SwiftyJSON.framework */,
 				2C0DB2B01E7B63E200FD3AD5 /* SharePlugin */,
 				2C0DB2AF1E7B63E200FD3AD5 /* Products */,
+				2C0DB2B71E7B640A00FD3AD5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -42,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				2C0DB2B11E7B63E200FD3AD5 /* Info.plist */,
+				2C0DB2BD1E7B642400FD3AD5 /* plugin.swift */,
 			);
 			path = SharePlugin;
 			sourceTree = "<group>";
@@ -78,6 +94,7 @@
 					2C0DB2AD1E7B63E200FD3AD5 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 3J55Z6Y7DQ;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -114,6 +131,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C0DB2BE1E7B642400FD3AD5 /* plugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,13 +228,21 @@
 		2C0DB2B51E7B63E200FD3AD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 3J55Z6Y7DQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = SharePlugin/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.yanex.SharePlugin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = plugin;
 			};
 			name = Debug;
@@ -224,13 +250,20 @@
 		2C0DB2B61E7B63E200FD3AD5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 3J55Z6Y7DQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = SharePlugin/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.yanex.SharePlugin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = plugin;
 			};
 			name = Release;

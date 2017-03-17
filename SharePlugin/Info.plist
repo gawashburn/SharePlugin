@@ -21,6 +21,6 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2017 Yan Zhulanow. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
-	<string></string>
+	<string>OrgYanexSharePlugin</string>
 </dict>
 </plist>
