@@ -4,6 +4,6 @@ A plugin for [Marta](https://marta.yanex.org) which allows to share the file usi
 
 ## Building
 
-:penguin: Use XCode 8.2.1 or later to build the project.
+:penguin: Use XCode 8.3 or later to build the project.
 
 Open the project and select *Product* → *Archive*.
