@@ -17,6 +17,18 @@ class OrgYanexShareAction : Action {
     let id = "org.yanex.share"
     let name = "Share"
     
+    var touchBarIcon: NSImage?
+    
+    init() {
+        // If using a new enough macOS, use the HIG TouchBar Share icon.
+        if #available(macOS 10.12.2, *) {
+            touchBarIcon = NSImage(named: NSImageNameTouchBarShareTemplate)
+        // Otherwise, use protocol default.
+        } else {
+            touchBarIcon = (self as Action).touchBarIcon
+        }
+    }
+    
     func isApplicable(context: ActionContext) -> Bool {
         let model = context.activePane.mutableModel
         return model.directoryData?.directory is LocalFile && 
