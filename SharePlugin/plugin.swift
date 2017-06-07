@@ -6,7 +6,7 @@ public class OrgYanexSharePlugin : NSObject, Plugin, ActionProvider {
     public let author = "Yan Zhulanow"
     public let email = "mail@yanex.org"
     
-    public let requiredApiVersion = ApiVersion.forMartaVersion(release: 0, major: 2)
+    public let requiredApiVersion = ApiVersion.forMartaVersion(release: 0, major: 3)
     
     public var actions: [Action] {
         return [ OrgYanexShareAction() ]
